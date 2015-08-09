@@ -15,8 +15,7 @@ public static int[] findTopN(int[] values, int k) {
     }
 
     int i =0;
-    while (!minHeap.isEmpty())
-    {
+    while (!minHeap.isEmpty()) {
         res[i++] = minHeap.poll();
     }
     return res;

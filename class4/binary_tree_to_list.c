@@ -1,10 +1,8 @@
-bool isDummyNode(TreeNode *node)
-{
+bool isDummyNode(TreeNode *node) {
     return (node->left == node);
 }
 
-vector<list<TreeNode *>> linkedListsFromTree(TreeNode *root)
-{
+vector<list<TreeNode *>> linkedListsFromTree(TreeNode *root) {
     vector<list<TreeNode *>> result;
     list<TreeNode *> levelList;
     queue<TreeNode *> nodeQueue;

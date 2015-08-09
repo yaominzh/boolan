@@ -1,7 +1,6 @@
 // If not present, inserts key into trie
 // If the key is prefix of trie node, just marks leaf node
-void insert(trie_t *pTrie, char key[])
-{
+void insert(trie_t *pTrie, char key[]) {
     int level;
     int length = strlen(key);
     int index;
@@ -10,11 +9,9 @@ void insert(trie_t *pTrie, char key[])
     pTrie->count++;
     pCrawl = pTrie->root;
 
-    for( level = 0; level < length; level++ )
-    {
+    for (level = 0; level < length; level++) {
         index = CHAR_TO_INDEX(key[level]);
-        if( !pCrawl->children[index] )
-        {
+        if (!pCrawl->children[index]) {
             pCrawl->children[index] = getNode();
         }
 
@@ -26,8 +23,7 @@ void insert(trie_t *pTrie, char key[])
 }
 
 // Returns non zero, if key presents in trie
-int search(trie_t *pTrie, char key[])
-{
+int search(trie_t *pTrie, char key[]) {
     int level;
     int length = strlen(key);
     int index;
@@ -35,12 +31,10 @@ int search(trie_t *pTrie, char key[])
 
     pCrawl = pTrie->root;
 
-    for( level = 0; level < length; level++ )
-    {
+    for (level = 0; level < length; level++) {
         index = CHAR_TO_INDEX(key[level]);
 
-        if( !pCrawl->children[index] )
-        {
+        if (!pCrawl->children[index]) {
             return 0;
         }
 

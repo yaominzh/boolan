@@ -1,4 +1,4 @@
-ListNode *midpoint( ListNode *head) {
+ListNode *midpoint(ListNode *head) {
     ListNode *chaser = head, *runner = head;
     if (head == NULL)
         return NULL;

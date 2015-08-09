@@ -1,4 +1,4 @@
-TreeNode *commonAncestor(TreeNode *root, TreeNode *p, TreeNode *q){
+TreeNode *commonAncestor(TreeNode *root, TreeNode *p, TreeNode *q) {
     if (covers(root->left, p) && covers(root->left, q)) {
         return commonAncestor(root->left, q, p);
     }
@@ -8,7 +8,7 @@ TreeNode *commonAncestor(TreeNode *root, TreeNode *p, TreeNode *q){
     return root;
 }
 
-bool covers(TreeNode *root, TreeNode *p){
+bool covers(TreeNode *root, TreeNode *p) {
     if (root == NULL) {
         return false;
     }

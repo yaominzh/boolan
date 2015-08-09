@@ -1,10 +1,10 @@
 class Queue {
 private:
-    stack<int> inputStack;
-    stack<int> outputStack;
+stack<int> inputStack;
+stack<int> outputStack;
 public:
-    void enqueue(int);
-    int dequeue();
+void enqueue(int);
+int dequeue();
 };
 
 void Queue::enqueue(int value) {
@@ -26,4 +26,3 @@ int Queue::dequeue() {
     outputStack.pop();
     return value;
 }
-

@@ -8,13 +8,10 @@ Given input array A = [1,1,2],
 
 Your function should return length = 2, and A is now [1,2].
 */
-
-public class Solution {
-    public int removeDuplicates(int[] A) {
-        int size = A.length;
+int removeDuplicates(int[] A, int size) {
         if (size <= 1)
             return size;
-        
+
         int fast = 1;
         int slow = 0;
         while ( fast < size) {
@@ -25,5 +22,4 @@ public class Solution {
             fast++;
         }
         return slow+1;
-    }
 }

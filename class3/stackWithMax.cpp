@@ -28,4 +28,3 @@ int stackWithMax::pop() {
 int stackWithMax::max() {
     return maxStack.top();
 }
-

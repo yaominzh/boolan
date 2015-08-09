@@ -9,7 +9,7 @@ bool isMatchParentheses(char left, char right) {
         case '[':
             return right == ']';
         case '{':
-        return right == '}';
+        return right = '}';
     }
     return false;
 }
@@ -28,4 +28,3 @@ bool isValidParentheses(string input) {
     }
     return parenthesesStack.empty();
 }
-

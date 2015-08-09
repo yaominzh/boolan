@@ -1,36 +1,19 @@
 class Solution {
 public:
-    /**
-     * @paramn n: An integer
-     * @return: A list of root
-     */
-    vector<TreeNode *> generateTrees(int n) {
-        return helper(1, n);
-    }
+    int numTrees(int n) {
+        vector<int> dp(n + 1, 0);
 
-private:
-    vector<TreeNode *> helper(int start, int end) {
-        vector<TreeNode *> result;
-        if (start > end) {
-            result.push_back(NULL);
-            return result;
-        }
+        //dp初始化
+        dp[0] = 1;
+        dp[1] = 1;
 
-        for (int i = start; i <= end; ++i) {
-            // generate left and right sub tree
-            vector<TreeNode *> leftTree = helper(start, i - 1);
-            vector<TreeNode *> rightTree = helper(i + 1, end);
-            // link left and right sub tree to root(i)
-            for (int j = 0; j < leftTree.size(); ++j) {
-                for (int k = 0; k < rightTree.size(); ++k) {
-                    TreeNode *root = new TreeNode(i);
-                    root->left = leftTree[j];
-                    root->right = rightTree[k];
-                    result.push_back(root);
-                }
+        for(int i = 2; i <= n; i++) {
+            for(int j = 0; j < i; j++) {
+                //如果左子树的个数为j，那么右子树为i - j - 1
+                dp[i] += dp[j] * dp[i - j - 1];
             }
         }
 
-        return result;
+        return dp[n];
     }
 };
