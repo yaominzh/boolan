@@ -11,7 +11,8 @@ double helper(int A[], int m, int B[], int n, int k){
     int pb = k - pa;
     if (A[pa-1] <= B[pb-1])
         return helper(A + pa, m - pa, B, n, k - pa);
-    return helper(A, m, B + pb, n - pb, k - pb);
+    else
+        return helper(A, m, B + pb, n - pb, k - pb);
 }
 
 double findMedianSortedArrays(int A[], int m, int B[], int n) {

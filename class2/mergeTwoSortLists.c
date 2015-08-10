@@ -11,8 +11,7 @@ ListNode *mergeTwoLists(ListNode *l1, ListNode *l2) {
     }
     cur = cur->next;
   }
-  if (l1)  cur->next = l1;
-  else cur->next = l2;
+  cur->next =  (NULL != l1) ? l1 : l2;
 
   return dummy->next;
 }

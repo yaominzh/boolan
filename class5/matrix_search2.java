@@ -8,7 +8,6 @@ public class Solution {
         if (target < matrix[0][0] || target > matrix[m-1][n-1])
             return false;
 
-
         int lower = 0;
         int upper = m*n -1;
         while (lower <= upper) {

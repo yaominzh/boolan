@@ -1,29 +1,25 @@
 class Solution {
 public:
-    ListNode* deleteDuplicates(ListNode* head) {
-          /* Pointer to traverse the linked list */
-          struct ListNode* current = head;
+    /**
+     * @param head: The first node of linked list.
+     * @return: head node
+     */
+    ListNode *deleteDuplicates(ListNode *head) {
+        if (head == NULL) {
+            return NULL;
+        }
 
-          /* Pointer to store the next pointer of a node to be deleted*/
-          struct ListNode* next_next;
-
-          /* do nothing if the list is empty */
-          if(current == NULL)
-             return NULL;
-
-          /* Traverse the list till last node */
-          while(current->next != NULL)   {
-           /* Compare current node with next node */
-            if(current->val == current->next->val) {
-               /*The sequence of steps is important*/
-              next_next = current->next->next;
-              free(current->next);
-              current->next = next_next;
+        ListNode *node = head;
+        while (node->next != NULL) {
+            if (node->val == node->next->val) {
+                ListNode *temp = node->next;
+                node->next = node->next->next;
+                delete temp;
+            } else {
+                node = node->next;
             }
-            else /* This is tricky: only advance if no deletion */ {
-              current = current->next;
-            }
-          }
-          return head;
+        }
+
+        return head;
     }
 };

@@ -18,3 +18,18 @@ bool covers(TreeNode *root, TreeNode *p) {
     return covers(root->left, p) || covers(root->right, p);
 }
 
+// bottom to top
+
+TreeNode *lowestCommonAncestor(TreeNode *root, TreeNode *A, TreeNode *B) {
+        // return either A or B or NULL
+        if (NULL == root || root == A || root == B) return root;
+
+        TreeNode *left = lowestCommonAncestor(root->left, A, B);
+        TreeNode *right = lowestCommonAncestor(root->right, A, B);
+
+        // A and B are on both sides
+        if ((NULL != left) && (NULL != right)) return root;
+
+        // either left or right or NULL
+        return (NULL != left) ? left : right;
+    }
