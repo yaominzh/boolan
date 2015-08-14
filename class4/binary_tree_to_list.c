@@ -11,7 +11,6 @@ vector<list<TreeNode *>> linkedListsFromTree(TreeNode *root) {
     TreeNode dummyNode;
     dummyNode.left = &dummyNode;
 
-
     if (!root) {
         return answer;
     }
@@ -32,7 +31,6 @@ vector<list<TreeNode *>> linkedListsFromTree(TreeNode *root) {
             } else {
                 nodeQueue.push(&dummyNode);
             }
-
         } else {
             levelList.push_back(currentNode);
             if (currentNode->left) {

@@ -1,8 +1,7 @@
 RandomListNode *copyRandomList(RandomListNode *head) {
      //insert nodes
      RandomListNode * cur = head;
-     while(cur!=NULL)
-     {
+     while(cur!=NULL) {
          RandomListNode* temp = new RandomListNode(cur->label);
          temp->next = cur->next;
          cur->next = temp;
@@ -11,8 +10,7 @@ RandomListNode *copyRandomList(RandomListNode *head) {
 
      // copy random pointer
      cur = head;
-     while(cur != NULL)
-     {
+     while (cur != NULL) {
          RandomListNode* temp = cur->next;
          if(cur->random != NULL)
              temp->random = cur->random->next;
@@ -22,8 +20,7 @@ RandomListNode *copyRandomList(RandomListNode *head) {
      //decouple two links
      cur = head;
      RandomListNode* dup = head == NULL? NULL:head->next;
-     while(cur != NULL)
-     {
+     while (cur != NULL) {
          RandomListNode* temp = cur->next;
          cur->next = temp->next;
          if(temp->next!=NULL)

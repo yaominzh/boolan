@@ -1,4 +1,4 @@
-void pathSumHelper(vector<int> path, vector<vector<int>> &result, TreeNode *root, int sum){
+void pathSumHelper(vector<int> path, vector<vector<int>> &answer, TreeNode *root, int sum){
     if(root == NULL)
         return;
     path.push_back(root->val);
