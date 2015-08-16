@@ -1,5 +1,4 @@
-TreeNode *inOrderSuccessor(TreeNode *node, TreeNode *root)
-{
+TreeNode *inOrderSuccessor(TreeNode *node, TreeNode *root) {
     if (!node) {
         return NULL;
     }

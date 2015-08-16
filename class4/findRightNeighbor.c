@@ -1,5 +1,4 @@
-TreeNode *descend(TreeNode *node, int level)
-{
+TreeNode *descend(TreeNode *node, int level) {
     while (node && level > 0) {
         if (node->left) {
             node = node->left;
@@ -13,8 +12,7 @@ TreeNode *descend(TreeNode *node, int level)
     return node;
 }
 
-TreeNode *findRightNeighbor(TreeNode *node)
-{
+TreeNode *findRightNeighbor(TreeNode *node) {
     int level = 0;
     TreeNode *parent = node->parent;
 

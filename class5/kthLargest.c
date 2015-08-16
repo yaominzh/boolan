@@ -8,6 +8,9 @@ struct cmp {
     }
 };
 
+const int NO_ERROR = 0;
+const int ERROR = 1;
+
 ErrorCode kthLargest(priority_queue<int, vector<int>, cmp> &heap, int &data, int k, int &outValue) {
     if (heap.size() < k) {
         heap.push(data);
@@ -19,7 +22,7 @@ ErrorCode kthLargest(priority_queue<int, vector<int>, cmp> &heap, int &data, int
         return ERROR;
     }
 
-    if (heap.top() > data) {
+    if (heap.top() < data) {
         heap.pop();
         heap.push(data);
     }
@@ -27,3 +30,9 @@ ErrorCode kthLargest(priority_queue<int, vector<int>, cmp> &heap, int &data, int
     outValue = heap.top();
     return NO_ERROR;
 }
+
+/*
+
+while (cin >> data)
+    kthLargest(heap, data, k, outValue)
+*/

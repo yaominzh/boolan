@@ -1,5 +1,4 @@
-void levelTraversal(TreeNode *root)
-{
+void levelTraversal(TreeNode *root) {
     queue<TreeNode *> nodeQueue;
     TreeNode *currentNode;
     if (!root) {

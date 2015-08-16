@@ -14,8 +14,7 @@ int partition( int array[], int left, int right ) {
     return left;
 }
 
-int quick_select(int array[], int left, int right, int k)
-{
+int quick_select(int array[], int left, int right, int k) {
     if ( left >= right )
         return array[left];
     int index = partition(array, left, right);

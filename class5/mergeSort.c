@@ -14,6 +14,7 @@ void merge_sort( int array[], int helper[], int left, int right){
     int curr = left;
     for(int i = left; i <= right; i++)
         helper[i] = array[i];
+    
     while( helperLeft <= mid && helperRight <= right ){
         if( helper[helperLeft] <= helper[helperRight] )
             array[curr++] = helper[helperLeft++];

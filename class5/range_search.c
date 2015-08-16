@@ -16,8 +16,7 @@ void searchRangeHelper(int array[], int left, int right, int target, int &begin,
     }
     else if (array[mid] < target) {
         searchRangeHelper(array, mid + 1, right, target, begin, end);
-    }
-    else {
+    } else {
         searchRangeHelper(array, left, mid - 1, target, begin, end);
     }
 }

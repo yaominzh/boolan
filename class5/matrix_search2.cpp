@@ -1,9 +1,8 @@
-public class Solution {
-    public boolean searchMatrix(int[][] matrix, int target) {
-        // Start typing your Java solution below
-        // DO NOT write main() function
-        int m = matrix.length;
-        int n = matrix[0].length;
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int> > &matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
 
         if (target < matrix[0][0] || target > matrix[m-1][n-1])
             return false;

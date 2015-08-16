@@ -11,9 +11,16 @@ int partition( int array[], int left, int right ) {
         if( left < right )
             swap( array[left++], array[right]);
     }
-    //array[left] = pivot;
+    array[left] = pivot;
     return left;
 }
+
+void qSort(int array[]) {
+    left = 0;
+    right = array.length -1;
+    qSort(array, left, right);
+}
+
 void qSort( int array[], int left, int right ){
     if( left >=right )
         return;
