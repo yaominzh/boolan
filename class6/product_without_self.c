@@ -1,6 +1,6 @@
 void replaceWithProducts(int elements[], int n) {
     int a[N] // This is the input
-        int products_below[N];
+    int products_below[N];
     p=1;
     for(int i=0;i<N;++i) {
           products_below[i]=p;
@@ -24,7 +24,7 @@ void replaceWithProducts(int elements[], int n) {
 void replaceWithProducts(int elements[], int n) {
     int product = 1;
     vector<int> table(n,1);
-    for(int  i = 0; i < n; i++){
+    for(int i = 0; i < n; i++){
         table[i] = product;
         product *= elements[i];
     }

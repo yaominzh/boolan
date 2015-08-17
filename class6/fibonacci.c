@@ -51,7 +51,7 @@ Matrix2By2 MatrixMultiply
 ///////////////////////////////////////////////////////////////////////
 // The nth power of matrix
  // 1  1
-// 1  0
+//  1  0
 ///////////////////////////////////////////////////////////////////////
 Matrix2By2 MatrixPower(unsigned int n)
 {
@@ -77,6 +77,7 @@ Matrix2By2 MatrixPower(unsigned int n)
   return matrix;
 }
 
+// templates
 struct Fib
 {
     enum{

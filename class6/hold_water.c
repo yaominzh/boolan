@@ -8,10 +8,10 @@ int trap(int A[], int n) {
         dp[i] = left_max; 
         if(A[i] > left_max)
             left_max = A[i];
-        }
+    }
         
     for(int i = n -1; i >= 0; i--) {
-        if(min(right_max,dp[i]) > A[i])
+        if(min(right_max, dp[i]) > A[i])
             water += min(right_max,dp[i]) - A[i];
            
         if(A[i] > right_max)
