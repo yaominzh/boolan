@@ -18,4 +18,3 @@ int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
     }
     return index;
 }
-
