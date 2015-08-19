@@ -3,10 +3,6 @@
 
 using namespace std;
 
-//void permutation(string & s) {
-//    permutationRecursion(s, 0);
-//}
-
 void permutationRecursion(string & s, size_t begin) {
     if(begin == s.length()) {
         cout << s << '\t';
