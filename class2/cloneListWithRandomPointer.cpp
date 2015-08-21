@@ -1,8 +1,6 @@
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
-        // IMPORTANT: Please reset any member data you declared, as
-        // the same Solution instance will be reused for each test case.
         if (!head){return NULL;}
         map<RandomListNode*,RandomListNode*> mp; //map <originalNode, newNode>
         mp.clear();

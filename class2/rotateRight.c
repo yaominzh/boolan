@@ -8,6 +8,7 @@ void rotate (struct node **head_ref, int k)
 
     // Let us understand the below code for example k = 4 and
     // list = 10->20->30->40->50->60.
+    // change to => 50->60->10->20->30->40
     struct node* current = *head_ref;
 
     // current will either point to kth or NULL after this loop.
