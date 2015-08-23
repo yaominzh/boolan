@@ -14,13 +14,13 @@ public:
         if(target == 0) {
             ret.push_back(curr);
             return;
-        } else if(target < 0)
+        } else if (target < 0)
             return;
         
         for(int i = level; i < num.size(); ++i) {
             target -= num[i];
             curr.push_back(num[i]);
-            BackTracking(ret,curr,num,target,i+1);
+            BackTracking(ret, curr, num, target, i+1);
             curr.pop_back();
             target += num[i];
             while(i < num.size()-1 && num[i] == num[i+1]) //we add this while loop is to skip the duplication result

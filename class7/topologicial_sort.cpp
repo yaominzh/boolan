@@ -4,8 +4,7 @@
 using namespace std;
 
 /************************类声明************************/
-class Graph
-{
+class Graph {
     int V;             // 顶点个数
     list<int> *adj;    // 邻接表
     queue<int> q;      // 维护一个入度为0的顶点的集合
@@ -43,7 +42,7 @@ bool Graph::topological_sort() {
             q.push(i);         // 将所有入度为0的顶点入队
 
     int count = 0;             // 计数，记录当前已经输出的顶点数 
-    while(!q.empty()) {
+    while (!q.empty()) {
         int v = q.front();      // 从队列中取出一个顶点
         q.pop();
 

@@ -1,14 +1,14 @@
-bool checkValid( int row1, int col1,int *rowCol ) {  
-    for( int row2 = row1 - 1; row2 >= 0; row2--) {
-        if( rowCol[row2] == col1 )
+bool checkValid( int row1, int col1, int *rowCol ) {  
+    for (int row2 = row1 - 1; row2 >= 0; row2--) {
+        if (rowCol[row2] == col1)
             return false;
-        if( abs(row1 - row2) == abs( rowCol[row2] - col1 ) )
+        if (abs(row1 - row2) == abs(rowCol[row2] - col1))
             return false;
     }
     return true;
 }
 
-void placeQ( int row, int rowCol[], vector<int*>& res ) {
+void placeQ(int row, int rowCol[], vector<int*>& res) {
     if (row == GRID_SIZE) {
         //winning
         int p[GRID_SIZE];
@@ -19,13 +19,22 @@ void placeQ( int row, int rowCol[], vector<int*>& res ) {
     }
 
     int col = 0;
-    for(col = 0; col < GRID_SIZE; col++) {
-        if( checkValid(row, col, rowCol) ) {
+    for (col = 0; col < GRID_SIZE; col++) {
+        if (checkValid(row, col, rowCol) ) {
             rowCol[row] = col;
-            placeQ( row+1, rowCol, res);
+            placeQ(row+1, rowCol, res);
             // because we rewrite rowCol[row] everytime, 
  // so backtracking is inferred here
         }     
     } 
 }
 
+const int GRID_SIZE;
+
+vector<int*>& placeQ(int N) {
+    GRID_SIZE = N;
+    int[] rowCol = new int[N];
+    vector<int*>& res;
+    placeQ(0, rowCol, res);
+    return res;
+}

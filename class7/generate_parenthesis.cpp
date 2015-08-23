@@ -1,11 +1,11 @@
 void parenthesesCombination(int leftRem, int rightRem, string &path, vector<string> &paths ){
-    if(leftRem < 0 || rightRem < 0)
+    if (leftRem < 0 || rightRem < 0)
         return;
         
-    if(leftRem > 0) {
+    if (leftRem > 0) {
         // make choice        
         path.push_back('(');
-        parenthesesCombination(leftRem-1,rightRem,path,paths); 
+        parenthesesCombination(leftRem-1, rightRem, path, paths); 
 
         // backtracking       
         path.pop_back();
@@ -17,7 +17,8 @@ void parenthesesCombination(int leftRem, int rightRem, string &path, vector<stri
         rightRem -= 1;
         if(rightRem == 0)
             paths.push_back(path);    // winning
-        parenthesesCombination (leftRem, rightRem, path, paths); 
+
+        parenthesesCombination(leftRem, rightRem, path, paths); 
 
         // backtracking        
         path.pop_back();          
@@ -27,10 +28,9 @@ void parenthesesCombination(int leftRem, int rightRem, string &path, vector<stri
 vector<string> generateParenthesis(int n) {        
     vector<string> res;
     if(n <= 0)  
-        return res;      
+        return res;
+
     string path;
-    parenthesesCombination(n, n, path, res);
-        
+    parenthesesCombination(n, n, path, res);    
     return res;
 }
-

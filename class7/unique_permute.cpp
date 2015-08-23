@@ -24,7 +24,6 @@ private:
                    vector<bool> &visited, vector<int> &nums) {
         if (list.size() == nums.size()) {
             result.push_back(list);
-            // avoid unnecessary call for `for loop`, but not essential
             return;
         }
 

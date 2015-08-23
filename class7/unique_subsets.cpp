@@ -25,7 +25,7 @@ private:
         ret.push_back(list);
 
         for (int i = pos; i != s.size(); ++i) {
-            if (i != pos && s[i] == s[i - 1]) {
+            if (i > pos && s[i] == s[i - 1]) {
                 continue;
             }
             list.push_back(s[i]);

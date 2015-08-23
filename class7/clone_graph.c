@@ -14,6 +14,7 @@ Node *clone(Node *graph) {
         Node *node = q.front();
         q.pop();
         int n = node->neighbors.size();
+        
         for (int i = 0; i < n; i++) {
             Node *neighbor = node->neighbors[i];
             // no copy exists
