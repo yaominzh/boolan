@@ -10,17 +10,14 @@ public:
         return ret;
     }
 
-    void BackTracking(vector<vector<int>>& ret, vector<int> curr, vector<int> num, int target, int level)
-    {
-        if(target == 0)
-        {
+    void BackTracking(vector<vector<int>>& ret, vector<int> curr, vector<int> num, int target, int level) {
+        if(target == 0) {
             ret.push_back(curr);
             return;
-        }
-        else if(target < 0)
+        } else if(target < 0)
             return;
-        for(int i = level; i < num.size(); ++i)
-        {
+        
+        for(int i = level; i < num.size(); ++i) {
             target -= num[i];
             curr.push_back(num[i]);
             BackTracking(ret,curr,num,target,i+1);

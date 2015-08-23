@@ -2,7 +2,8 @@ class Solution {
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
         vector<vector<int> > result;
-        if (nums.empty()) return result;
+        if (nums.empty())
+            return result;
 
         sort(nums.begin(), nums.end());
         vector<int> list;

@@ -19,22 +19,17 @@ public:
         return ret;
     }
 
-    void combinations(vector<string>& ret, string tmp, string digits, vector<string> dic, int level)
-    {
-        if(level == digits.size())
-        {
+    void combinations(vector<string>& ret, string tmp, string digits, vector<string> dic, int level) {
+        if(level == digits.size()) {
             ret.push_back(tmp);
             return;
         }
 
         int index = digits[level]-'0';
-        for(int i = 0; i < dic[index].size(); ++i)
-        {
+        for(int i = 0; i < dic[index].size(); ++i) {
             tmp.push_back(dic[index][i]);
-            combinations(ret,tmp,digits,dic,level+1);
+            combinations(ret, tmp, digits, dic, level+1);
             tmp.pop_back();
         }
     }
-
-
 };

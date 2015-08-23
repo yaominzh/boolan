@@ -9,7 +9,7 @@ void parenthesesCombination(int leftRem, int rightRem, string &path, vector<stri
 
         // backtracking       
         path.pop_back();
-  }
+    }
         
     if(leftRem < rightRem) { 
         // make choice

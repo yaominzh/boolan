@@ -1,8 +1,8 @@
 class Solution {
 public:
  
-    bool isValid(string &str, int st, int ed) {
-        while (st<ed){
+    bool isValid(const string &str, int st, int ed) {
+        while (st<ed) {
             if (str[ed] != str[st]) {
                 return false;
             } else {
@@ -14,7 +14,7 @@ public:
     }
  
      
-    void find(string s, int st, vector<string> &r, vector<vector<string> > &res){
+    void find(string s, int st, vector<string> &r, vector<vector<string> > &res) {
         if (st>=s.size()) {
             res.push_back(r);
         } else {

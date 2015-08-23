@@ -9,10 +9,10 @@ int ladderLength(string start, string end, unordered_set<string> &dict) {
     while(!myque.empty()) {
         word = myque.front();
         myque.pop();
-        if(word == end){
+        if (word == end) {
             return count;
         }
-        if(word.size() == 0 && !myque.empty()) {
+        if (word.size() == 0 && !myque.empty()) {
             count++;
             myque.push("");
         }
