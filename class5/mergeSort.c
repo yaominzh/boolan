@@ -6,7 +6,7 @@ void merge_sort( int array[], int helper[], int left, int right){
     // both parts will be sorted by the calling merge_sort
     int mid = right - (right - left) / 2;
     merge_sort( array, helper, left, mid );
-    merge_sort( array, helper, mid + 1, right);
+    merge_sort( array, helper, mid  + 1, right);
 
     // now we merge two parts into one
     int helperLeft = left;
