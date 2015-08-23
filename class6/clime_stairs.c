@@ -8,5 +8,6 @@ int climbStairs(int n) {
         p = q;
         q = curr;
     }
+    
     return curr;
 }

@@ -29,3 +29,10 @@ vector<string> wordBreak(string s, unordered_set<string> &dict, unordered_map<st
     cache[s] = vs;
     return vs;
 }
+
+vector<string> wordBreak(string s, unordered_set<string> &dict) {
+    if(s.empty())
+        return vector<string>();
+    unordered_map<string,vector<string> > cache;
+    return wordBreak(s,dict,cache);
+}

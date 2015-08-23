@@ -7,8 +7,10 @@ int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
         array[i] = gas[i] - cost[i];
         sum += array[i];
     }
+    
     if (sum < 0) 
         return -1;
+
     for(int i = 0; i < size; i++) {
         subSum += array[i];
         if(subSum < 0) {
@@ -16,5 +18,6 @@ int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
             index = i + 1;
         }
     }
+    
     return index;
 }
