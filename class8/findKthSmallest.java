@@ -30,18 +30,18 @@ public class FindKthSmallest {
      * Worst case: O(n^2)
      *
      */
-    public static int findKthSmallest(int[] arr, int k){
+    public static int findKthSmallest(int[] arr, int k) {
         if(k < 1 || k > arr.length) return -1;
         return findKthSmallest(arr, k - 1, 0, arr.length - 1);
     }
 
     public static int findKthSmallest(int[] arr, int k, int start, int end){
         int partitionIndex = partition(arr, start, end);
-        if(partitionIndex > k){
+        if(partitionIndex > k) {
             return findKthSmallest(arr, k, start, partitionIndex - 1);
-        }else if(partitionIndex < k){
+        } else if(partitionIndex < k){
             return findKthSmallest(arr, k, partitionIndex + 1, end);
-        }else{
+        } else{
             return arr[partitionIndex];
         }
     }
@@ -52,8 +52,8 @@ public class FindKthSmallest {
         swap(arr, pivotIndex, end);
         int pivot = arr[end];
         int i = start, j = start;
-        while(j < end){
-            if(arr[j] < pivot){
+        while(j < end) {
+            if (arr[j] < pivot) {
                 swap(arr, j, i);
                 i++;
             }
@@ -77,11 +77,11 @@ public class FindKthSmallest {
     public static int findKthSmallest2(int[] arr, int k){
         if(k < 1 || k > arr.length) return -1;
         Queue<Integer> queue = new PriorityQueue<Integer>(arr.length);
-        for(int num : arr){
+        for (int num : arr){
             queue.add(num);
         }
 
-        for(int i = 0; i < k - 1; i++){
+        for (int i = 0; i < k - 1; i++){
             queue.poll();
         }
         return queue.poll();
@@ -102,12 +102,12 @@ public class FindKthSmallest {
         };
 
         Queue<Integer> queue = new PriorityQueue<Integer>(k, comparator);
-        for(int i = 0; i < k; i++){
+        for (int i = 0; i < k; i++) {
             queue.add(arr[i]);
         }
 
-        for(int i = k; i < arr.length; i++){
-            if(arr[i] < queue.peek()){
+        for (int i = k; i < arr.length; i++) {
+            if (arr[i] < queue.peek()){
                 queue.poll();
                 queue.add(arr[i]);
             }
@@ -120,7 +120,7 @@ public class FindKthSmallest {
      * Min Heap
      * Time: O(k + (n - k)logk)
      */
-    public static int findKthLargest(int[] arr, int k){
+    public static int findKthLargest(int[] arr, int k) {
         if(k < 1 || k > arr.length) return -1;
         Queue<Integer> queue = new PriorityQueue<Integer>(k);
         for(int i = 0; i < k; i++){
@@ -143,5 +143,4 @@ public class FindKthSmallest {
         System.out.println(findKthSmallest3(arr, 5));
         System.out.println(findKthLargest(arr, 5));
     }
-
 }

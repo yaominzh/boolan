@@ -6,7 +6,8 @@ int ladderLength(string start, string end, unordered_set<string> &dict) {
     myque.push("");    // used to determine which level it is
     string word;
     string mid;    // used to intermediate result
-    while(!myque.empty()) {
+
+    while (!myque.empty()) {
         word = myque.front();
         myque.pop();
         if (word == end) {
@@ -15,13 +16,13 @@ int ladderLength(string start, string end, unordered_set<string> &dict) {
         if (word.size() == 0 && !myque.empty()) {
             count++;
             myque.push("");
-        }
-        else if(!myque.empty()) {
-            for(int i = 0; i < word.size(); i++) {
+        } else if (!myque.empty()) {
+            for (int i = 0; i < word.size(); i++) {
                 mid = word;
-                for(int j = 'a'; j < 'z'; j++){
+                for (int j = 'a'; j < 'z'; j++){
                     mid[i] = (char)j;
-                    if(check.find(mid) == check.end() && dict.find(mid) != dict.end()) {
+                    if (check.find(mid) == check.end() 
+                        && dict.find(mid) != dict.end()) {
                         myque.push(mid);
                         check.insert(mid);
                     }

@@ -1,9 +1,5 @@
 class Solution {
 public:
-    /**
-     * @param A : An integer array
-     * @return : An integer
-     */
     int singleNumberII(vector<int> &A) {
         if (A.empty()) {
             return 0;

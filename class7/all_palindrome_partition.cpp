@@ -19,8 +19,8 @@ public:
         } else {
             for (int i=st; i<s.size(); i++) {            
                 if (isValid(s, st, i)) {
-                    r.push_back(s.substr(st,i-st+1));
-                    find(s, i+1, r, res);        
+                    r.push_back(s.substr(st, i-st+1));
+                    find(s, i+1, r, res);  
                     r.pop_back();
                 }
             }

@@ -1,42 +1,47 @@
-class Solution {
-public:
-    vector<vector<int> > threeSum(vector<int> &num) 
-    {
-        vector<vector<int> > result;
-        if (num.size() < 3) return result;
+set<vector<int> > find_triplets(vector<int> arr) {
+  sort(arr.begin(), arr.end());
+  set<vector<int> > triplets;
+  vector<int> triplet(3);
+  int n = arr.size();
+  for (int i = 0;i < n; i++) {
+    int j = i + 1;
+    int k = n - 1;
 
-        int ans = 0;
+    while (j < k) {
+      int sum_two = arr[i] + arr[j];
+      if (sum_two + arr[k] < 0) {
+        j++;
+      } else if (sum_two + arr[k] > 0) {
+        k--;
+      } else {
+        triplet[0] = arr[i];
+        triplet[1] = arr[j];
+        triplet[2] = arr[k];
+        triplets.insert(triplet);
+        j++;
+        k--;
+      }
+    }
+  }
+  return triplets;
+}
 
-        sort(num.begin(), num.end());
-
-        for (int i = 0;i < num.size() - 2; ++i)
-        {
-            if (i > 0 && num[i] == num[i - 1])  
-                continue;
-            int j = i + 1;
-            int k = num.size() - 1;
-
-            while (j < k)
-            {
-                ans = num[i] + num[j] + num[k];
-
-                if (ans == 0)
-                {
-                    result.push_back({num[i], num[j], num[k]});
-                    ++j;
-                    while (j < num.size() && num[j] == num[j - 1])
-                        ++j;
-                    --k;
-                    while (k >= 0 && num[k] == num[k + 1])
-                        --k;
-                }
-                else if (ans > 0) 
-                    --k;
-                else 
-                    ++j;
+// if not allow sort, use hash
+bool three_sum(int nums[], int n, int target) {
+    hash_map<int, int> arr_hash;
+    for (int i =0; i< n; i++) {
+        arr_hash[nums[i]] = i;
+    }
+    hash_map<int, int>::iterator iter;
+    for (int i =0; i< n-1; i++) {
+        for (int j = i+1; j < n; j++) {
+            int sum = nums[i] + nums[j];
+            iter = arr_hash.find(target - sum);
+            if (iter!=arr_hash.end()) {
+                if (iter->second > j) // not allow the same element;
+                    cout<<nums[i]<<" "<<nums[j]<<" "<<iter->first<<endl;
             }
         }
-
-        return result;
     }
-};
+    cout<<endl;
+}
