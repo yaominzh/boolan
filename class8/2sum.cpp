@@ -1,3 +1,4 @@
+// map, time: O(n)
 vector<int> addsToTarget(vector<int> &numbers, int target) {
     unordered_map<int, int> numToIndex;
     vector<int> vi(2);
@@ -11,7 +12,7 @@ vector<int> addsToTarget(vector<int> &numbers, int target) {
     }
 }
 
-// 1) quicksort, time: O(nlgn),
+// quicksort, time: O(nlgn),
 bool hasArrayTwoCandidates(int A[], int arr_size, int sum) {
     int l, r;
 

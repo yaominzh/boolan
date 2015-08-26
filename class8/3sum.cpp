@@ -1,3 +1,4 @@
+// first sort, then fix a num and search in 2sum
 set<vector<int> > find_triplets(vector<int> arr) {
   sort(arr.begin(), arr.end());
   set<vector<int> > triplets;
@@ -32,16 +33,20 @@ bool three_sum(int nums[], int n, int target) {
     for (int i =0; i< n; i++) {
         arr_hash[nums[i]] = i;
     }
+
     hash_map<int, int>::iterator iter;
-    for (int i =0; i< n-1; i++) {
+    for (int i = 0; i< n-1; i++) {
         for (int j = i+1; j < n; j++) {
             int sum = nums[i] + nums[j];
             iter = arr_hash.find(target - sum);
-            if (iter!=arr_hash.end()) {
-                if (iter->second > j) // not allow the same element;
-                    cout<<nums[i]<<" "<<nums[j]<<" "<<iter->first<<endl;
+            if (iter != arr_hash.end()) {
+                // not allow the same element;
+                if (iter->second > j) {
+                  cout<<nums[i]<<" "<<nums[j]<<" "<<iter->first<<endl;
+                  return true;
+                }
             }
         }
     }
-    cout<<endl;
+    return false;
 }

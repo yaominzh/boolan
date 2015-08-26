@@ -1,3 +1,4 @@
+// use it in quick sort
 int partition(int arr[], int n, int pivot) {
       int i = 0, j = n-1;
       int tmp;
@@ -19,6 +20,7 @@ int partition(int arr[], int n, int pivot) {
       return i;
 }
 
+// another compare
 int partition(int v[], int n, int key) {
     int i = 0;
     int j = n - 1;

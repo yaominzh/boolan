@@ -5,4 +5,3 @@ int singleValue(vector<int> array) {
     }
     return value;
 }
-

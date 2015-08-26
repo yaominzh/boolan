@@ -14,4 +14,4 @@ void mergeSortedArray(int A[], int m, int B[], int n) {
         while (m > 0) {
             A[--index] = A[--m];
         }
-    }
+}
