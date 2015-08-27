@@ -4,6 +4,7 @@ public:
     struct greaterListNode{
         bool operator() (ListNode* x, ListNode* y) {return x->val > y->val;}
     };
+
     ListNode *mergeKLists(vector<ListNode *> &lists) {
         if(lists.size() == 0)
             return NULL;
@@ -11,8 +12,8 @@ public:
         if(lists.size() == 1)
             return lists[0];
 
-        ListNode* pre_head = new ListNode(-1);
-        ListNode* pre = pre_head;
+        ListNode* dummy = new ListNode(-1);
+        ListNode* pre = dummy;
         std::priority_queue<ListNode*, vector<ListNode*>, greaterListNode> pq;
 
         // Insert entries of every list into heap
@@ -29,8 +30,8 @@ public:
                 pq.push(pre->next);
         }
 
-        ListNode* head = pre_head->next;
-        delete pre_head;
+        ListNode* head = dummy->next;
+        delete dummy;
         return head;
     }
 };

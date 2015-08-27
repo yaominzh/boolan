@@ -12,7 +12,7 @@ RandomListNode *copyRandomList(RandomListNode *head) {
      cur = head;
      while (cur != NULL) {
          RandomListNode* temp = cur->next;
-         if(cur->random != NULL)
+         if (cur->random != NULL)
              temp->random = cur->random->next;
          cur = temp->next;
      }
@@ -23,7 +23,7 @@ RandomListNode *copyRandomList(RandomListNode *head) {
      while (cur != NULL) {
          RandomListNode* temp = cur->next;
          cur->next = temp->next;
-         if(temp->next!=NULL)
+         if (temp->next != NULL)
              temp->next = temp->next->next;
          cur = cur->next;
      }

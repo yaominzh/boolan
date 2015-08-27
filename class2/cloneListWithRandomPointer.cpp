@@ -15,6 +15,7 @@ public:
             p=p->next;
             q=q->next;
         }
+        
         p=head;
         q=res->next;
         while (p){

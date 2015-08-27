@@ -5,13 +5,13 @@ ListNode *findkthtoLast(ListNode *head,int k){
     if (head == NULL || k < 0)
         return NULL;
 
-    for(int i = 0; i < k; i++)
+    for (int i = 0; i < k; i++)
         runner = runner->next;
 
-    if( runner == NULL )
+    if (runner == NULL)
         return NULL;
 
-    while( runner->next != NULL ) {
+    while (runner->next != NULL) {
         chaser = chaser->next;
         runner = runner->next;
     }

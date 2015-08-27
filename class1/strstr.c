@@ -3,15 +3,15 @@ bool hasSubstring(const char *str, const char *find) {
         return true;
 
     for(int i = 0; str[i] != '\0'; i++) {
-        bool foundNonMatch = false;
+        bool foundMatch = true;
         for(int j = 0; find[j] != '\0'; j++) {
             if (str[i + j] != find[j]) {
-                foundNonMatch = true;
+                foundNonMatch = false;
                 break;
             }
         }
 
-        if (!foundNonMatch) {
+        if (foundNonMatch) {
             return true;
         }
     }

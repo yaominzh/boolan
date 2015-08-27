@@ -13,4 +13,3 @@ bool isElementInMatrix(int **matrix, int M, int N, int target) {
     }
     return false;
 }
-

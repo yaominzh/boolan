@@ -1,4 +1,4 @@
- class Queue {
+class Queue {
     public:
         Queue() {
             _front = 0;

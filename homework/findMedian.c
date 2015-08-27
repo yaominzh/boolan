@@ -17,7 +17,7 @@ double helper(int A[], int m, int B[], int n, int k){
 
 double findMedianSortedArrays(int A[], int m, int B[], int n) {
     int total = m + n;
-    if(total % 2 == 0){
+    if (total % 2 == 0){
         return (helper(A, m, B, n, total / 2) + helper(A, m, B, n, total / 2 + 1)) / 2;
     }
     return helper(A, m, B, n, total / 2 + 1);

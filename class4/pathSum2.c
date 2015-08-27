@@ -5,6 +5,7 @@ void pathSumHelper(vector<int> path, vector<vector<int>> &result, TreeNode *root
     if(root->left == NULL && root->right == NULL && root->val == sum){
         result.push_back(path);
     }
+    
     pathSumHelper(path,answer,root->left, sum - root->val);
     pathSumHelper(path,answer,root->right, sum - root->val);
     path.pop_back();

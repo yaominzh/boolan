@@ -6,5 +6,6 @@ bool isUnique(string input) {
         }
         hashMap[(int)input[i]] = 1;
     }
+    
     return true;
 }

@@ -5,6 +5,7 @@ void printLevelOrderZigZag(BinaryTree *root) {
   while (!currentLevel.empty()) {
     BinaryTree *currNode = currentLevel.top();
     currentLevel.pop();
+
     if (currNode) {
       cout << currNode->data << " ";
       if (leftToRight) {
@@ -15,6 +16,7 @@ void printLevelOrderZigZag(BinaryTree *root) {
         nextLevel.push(currNode->left);
       }
     }
+    
     if (currentLevel.empty()) {
       cout << endl;
       leftToRight = !leftToRight;

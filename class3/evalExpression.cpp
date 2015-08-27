@@ -11,7 +11,7 @@ int evalPostfix(string input) {
           operation.pop();
           operand1 = operation.top();
           operation.pop();
-          switch(input[i]) {
+          switch (input[i]) {
                   case '+': result = operand1 + operand2;
                     operation.push(result);
                     break;
