@@ -1,7 +1,7 @@
 class Solution {
 public:
     RandomListNode *copyRandomList(RandomListNode *head) {
-        if (!head){return NULL;}
+        if (!head) {return NULL;}
         map<RandomListNode*,RandomListNode*> mp; //map <originalNode, newNode>
         mp.clear();
         RandomListNode *res=new RandomListNode(0);

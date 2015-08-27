@@ -6,7 +6,7 @@ public:
 
         int cn = 0;
 
-        while(l1 || l2) {
+        while (l1 || l2) {
             int val = cn + (l1 ? l1->val : 0) + (l2 ? l2->val : 0);
             cn = val / 10;
             val = val % 10;

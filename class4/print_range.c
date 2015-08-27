@@ -1,7 +1,6 @@
 /* The functions prints all the keys which in the given range [k1..k2].
     The function assumes than k1 < k2 */
-void Print(struct node *root, int k1, int k2)
-{
+void Print(struct node *root, int k1, int k2) {
    /* base case */
    if ( NULL == root )
       return;

@@ -1,8 +1,7 @@
 // This function rotates a linked list counter-clockwise and updates the head.
 // The function assumes that k is smaller than size of linked list. It doesn't
 // modify the list if k is greater than or equal to size
-void rotate (struct node **head_ref, int k)
-{
+void rotate (struct node **head_ref, int k) {
      if (k == 0)
        return;
 
@@ -14,8 +13,7 @@ void rotate (struct node **head_ref, int k)
     // current will either point to kth or NULL after this loop.
     //  current will point to node 40 in the above example
     int count = 1;
-    while (count < k && current != NULL)
-    {
+    while (count < k && current != NULL) {
         current = current->next;
         count++;
     }

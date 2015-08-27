@@ -21,4 +21,3 @@ int isBalancedHelper(TreeNode *root) {
 bool isBalancedTree(TreeNode *root) {
     return (isBalancedHelper(root) != -1)
 }
-

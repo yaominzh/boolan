@@ -1,11 +1,11 @@
 TreeNode* search_tree_node_with_ancestors(TreeNode* root, int value, vector<TreeNode*>& ancestors)
 {
     if (root == NULL) return NULL;
+
     if (root->value == value) {
         ancestors.push_back(root);
         return root;
-    }
-    else {
+    } else {
         ancestors.push_back(root);
         TreeNode* tn = search_tree_node_with_ancestors(root->left, value, ancestors);
         if (tn != NULL) return tn;

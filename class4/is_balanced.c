@@ -3,6 +3,7 @@ int level(TreeNode *root){
         return 0;
     return max(level(root->left), level(root->right)) + 1;
 }
+
 bool isBalanced(TreeNode* root){
     if(root ==  NULL)
         return true;

@@ -1,6 +1,5 @@
 // An iterative process to print preorder traversal of Binary tree
-void iterativePreorder(node *root)
-{
+void iterativePreorder(node *root) {
     // Base Case
     if (root == NULL)
        return;
@@ -14,8 +13,7 @@ void iterativePreorder(node *root)
        b) push its right child
        c) push its left child
     Note that right child is pushed first so that left is processed first */
-    while (nodeStack.empty() == false)
-    {
+    while (nodeStack.empty() == false) {
         // Pop the top item from stack and print it
         struct node *node = nodeStack.top();
         printf ("%d ", node->data);

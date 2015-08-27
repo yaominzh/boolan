@@ -27,4 +27,3 @@ TreeNode *inOrderSuccessor(TreeNode *node) {
     }
     return parent;
 }
-
