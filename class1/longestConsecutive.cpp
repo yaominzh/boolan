@@ -7,6 +7,7 @@ struct Bound {
         low  = l;
     }
 };
+
 int longestConsecutive(vector<int> &num) {
     unordered_map<int, Bound> table;
 

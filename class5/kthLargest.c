@@ -32,7 +32,7 @@ ErrorCode kthLargest(priority_queue<int, vector<int>, cmp> &heap, int &data, int
 
 /*
 void main() {
-   int outValue;
+    int outValue;
     priority_queue<int, vector<int>, cmp> heap;
     while (cin >> data) {
         if (kthLargest(heap, data, k, outValue) == NO_ERROR)

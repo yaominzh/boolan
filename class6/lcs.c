@@ -12,5 +12,3 @@ int lcs( string str1, string str2) {
     }
     return length[str1.size()][str2.size()];
 }
-
-
