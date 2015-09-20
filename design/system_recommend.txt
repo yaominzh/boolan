@@ -18,14 +18,14 @@ http://www.labazhou.net/
 - Algorithm design, system design
 http://www.hiredintech.com/app
 
-－ High Scalablity
-http://highscalability.com/
 
 - Computer Systems, Distributed Algorithms and Databases
  http://the-paper-trail.org/blog/
 
 
 * Blogs
+－ High Scalablity
+http://highscalability.com/
 
 - Storage and Distributed System
 http://dongfeiwww.com/system/2014/08/19/system/
@@ -48,7 +48,7 @@ http://blog.csdn.net/longyulu/article/details/9159589
 - System Design
 http://myprogrammingpractices.blogspot.com/2015/06/software-engineer-interview-preparation.html
 
-* Companies
+* Tech Company Blogs
 
 - Twitter
 https://blog.twitter.com/engineering

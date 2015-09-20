@@ -20,7 +20,7 @@ public:
 // in the source file
 MySingleton *MySingleton::m_pInstance = NULL;
 
-注意，本例中的实现方式针对非多线程的情况。如果有过个线程想要同时调用getSharedInstance函数，则需要用mutex保护下列代码：
+// 注意，本例中的实现方式针对非多线程的情况。如果有过个线程想要同时调用getSharedInstance函数，则需要用mutex保护下列代码：
         pthread_mutex_lock(&mutex);
         if (!m_pInstance) {
             m_pInstance = new MySingleton;
